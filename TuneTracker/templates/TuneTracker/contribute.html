@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tune Tracker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'TuneTracker/base.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            {% load static %}
+            <img src="{% static 'TuneTracker/logo.png' %}" class="logo">
+            <ul class="navbar-items">
+                <li>
+                    <form action="/"><button>TuneTracker</button></form>
+                </li>
+                <li>
+                    <form action="/contribute"><button>Contribute</button></form>
+                </li>
+            </ul>
+        </div>
+        <div class="container-form">
+            <h2>Contribute here!</h2>
+            <form method="post" action="{% url 'saveform' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="artist_name" placeholder="Enter Artist's Name">
+                </div>
+                <button class="btn"> Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

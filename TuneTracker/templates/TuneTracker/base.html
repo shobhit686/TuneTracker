@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tune Tracker</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'TuneTracker/base.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            {% load static %}
+            <img src="{% static 'TuneTracker/logo.png' %}" class="logo">
+            <ul class="navbar-items">
+                <li><form action="/"><button>TuneTracker</button></form></li>
+                <li><form action="/contribute"><button>Contribute</button></form></li>
+            </ul>
+        </div>
+        <div class="content">
+            <input type="text" id= "myInput" class="search" placeholder="Search Artists.." onkeyup="myFunction()">
+            {% block body %}
+                <table id="myTable" class="content-table">
+                    <tr class="header-row">
+                        <th>Song</th>
+                        <th>Artist</th>
+                    </tr>
+                    <tbody class="table-body">
+            {% for i in songs %}
+                    <tr class="data-row">
+                        <td>{{i.title}}</td>
+                        <td>{{i.artist}}</td>
+                    </tr>
+                    </tbody>
+            {% endfor %}
+                </table>
+            {% endblock body %}
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            var rows = table.getElementsByTagName("tr");
+            for (i = 1; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName("td");
+                var j;
+                var rowContainsFilter = false;
+                for (j = 0; j < cells.length; j++) {
+                    if (cells[j]) {
+                        if (cells[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            rowContainsFilter = true;
+                            continue;
+                        }
+                    }
+                }
+
+                if (!rowContainsFilter) {
+                    rows[i].style.display = "none";
+                } else {
+                    rows[i].style.display = "";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

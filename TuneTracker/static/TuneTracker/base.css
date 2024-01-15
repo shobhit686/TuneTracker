@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    background-image: url(image1.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.navbar {
+    width: 88%;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 60px;
+    cursor: pointer;
+}
+
+.navbar-items {
+    margin-right: 880px;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.navbar ul li button {
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-right: 15px;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    min-width: 500px;
+    color: aliceblue;
+    font-size: 20px;
+}
+
+.header-row th {
+    /* background-color: rgb(211, 209, 209);
+    color: rgb(9, 3, 3); */
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+.data-row td {
+    font-size: 18px;
+    padding: 2.5px 2.5px;
+}
+
+.search {
+    min-width: 400px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.container-form {
+    border: 2px solid white;
+    margin: 100px;
+    padding: 12px 30px;
+    width: 40%;
+    height: 200px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.form-group input {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    display: block;
+    width: 300px;
+    padding: 6px;
+    border-radius: 9px;
+    margin: 10px auto;
+}
+
+.form-group input::placeholder {
+    color: black;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+.container-form h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color: azure;
+}
+
+.container-form button {
+    margin: 14px auto;
+    width: 25%;
+    display: block;
+}
+
+.btn {
+    margin: 0px 8px;
+    background-color: white;
+    color: black;
+    padding: 4px;
+    cursor: pointer;
+    border: 2px solid grey;
+    border-radius: 8px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.btn:hover {
+    background-color: rgb(239, 206, 206);
+}
